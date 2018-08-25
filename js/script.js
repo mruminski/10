@@ -7,6 +7,7 @@ for (var i = 0; i < dataLen; i++) {
   wondersList += Mustache.render(template, data[i]);
 }
 
+container.insertAdjacentHTML('beforeEnd', wondersList);
 
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity(elem, {
