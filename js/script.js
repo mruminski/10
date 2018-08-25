@@ -1,3 +1,13 @@
+var template = document.getElementById('template').innerHTML;
+var wondersList = '';
+var dataLen = data.length;
+
+for (var i = 0; i < dataLen; i++) {
+  console.log(data[i]);
+  wondersList += Mustache.render(template, data[i]);
+}
+
+
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity(elem, {
   cellAlign: 'left',
