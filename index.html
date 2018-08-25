@@ -1,72 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New 7 Wonders of the World</title>
-    <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
-    <link rel="stylesheet" type="text/css" href="vendor/flickity.min.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-  </head>
-  <script id="template" type="x-tmpl-mustache">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New 7 Wonders of the World</title>
+  <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
+  <link rel="stylesheet" type="text/css" href="vendor/flickity.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<script id="template" type="x-tmpl-mustache">
   <h3> {{ title }}</h3>
-  <ul>
-  {{{ wonders }}}
-  </ul>
+  {{{ description }}}
   </script>
-  <script>
-    var data = [
-      {
-        image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Petra_Jordan_BW_21.JPG/800px-Petra_Jordan_BW_21.JPG">',
-        title: 'Petra',
-        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-      },
-      {
-        image: '<img src="https://upload.wikimedia.org/wikipedia/commons/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg">',
-        title: 'Great Wall of China',
-        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-      },
-      {
-        image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg/1280px-Colosseum_in_Rome%2C_Italy_-_April_2007.jpg">',
-        title: 'The Colosseum',
-        description: ''
-      },
-      {
-        image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/360px-Chichen_Itza_3.jpg">',
-        title: 'Chichen Itza',
-        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-      },
-      {
-        image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/80_-_Machu_Picchu_-_Juin_2009_-_edit.2.jpg/300px-80_-_Machu_Picchu_-_Juin_2009_-_edit.2.jpg">',
-        title: 'Machu Picchu',
-        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-      },
-      {
-        image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/250px-Taj_Mahal_%28Edited%29.jpeg">',
-        title: 'Taj Mahal',
-        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-      },
-      {
-        image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Cristo_Redentor_-_Rio_de_Janeiro%2C_Brasil.jpg/800px-Cristo_Redentor_-_Rio_de_Janeiro%2C_Brasil.jpg">',
-        title: 'Christ of Redeemer',
-        description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-      }
-    ]
-  </script>
-	<body>
-    <button id="reset-btn" data-selector="#carousel-cell1">Reset</button>
-		<div class="main-carousel">
-     <div class="carousel-cell" id="carousel-cell1">
-       <div id="container">
-       </div>
-     </div>
+<script>
+  var data = [
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Petra_Jordan_BW_21.JPG/800px-Petra_Jordan_BW_21.JPG">',
+      title: 'Petra',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Petra_Jordan_BW_21.JPG/800px-Petra_Jordan_BW_21.JPG">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg">',
+      title: 'Great Wall of China',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg/1280px-Colosseum_in_Rome%2C_Italy_-_April_2007.jpg">',
+      title: 'The Colosseum',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg/1280px-Colosseum_in_Rome%2C_Italy_-_April_2007.jp">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/360px-Chichen_Itza_3.jpg">',
+      title: 'Chichen Itza',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/360px-Chichen_Itza_3.jpg">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/80_-_Machu_Picchu_-_Juin_2009_-_edit.2.jpg/300px-80_-_Machu_Picchu_-_Juin_2009_-_edit.2.jpg">',
+      title: 'Machu Picchu',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/80_-_Machu_Picchu_-_Juin_2009_-_edit.2.jpg/300px-80_-_Machu_Picchu_-_Juin_2009_-_edit.2.jpg">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/250px-Taj_Mahal_%28Edited%29.jpeg">',
+      title: 'Taj Mahal',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/250px-Taj_Mahal_%28Edited%29.jpe">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Cristo_Redentor_-_Rio_de_Janeiro%2C_Brasil.jpg/800px-Cristo_Redentor_-_Rio_de_Janeiro%2C_Brasil.jpg">',
+      title: 'Christ of Redeemer',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Cristo_Redentor_-_Rio_de_Janeiro%2C_Brasil.jpg/800px-Cristo_Redentor_-_Rio_de_Janeiro%2C_Brasil.jpg">'
+    }
+  ]
+</script>
+<body>
+  <button id="reset-btn" data-selector="#carousel-cell1">Reset</button>
+  <div class="main-carousel">
+    <div class="carousel-cell" id="carousel-cell1">
+      <div class="container">
+          <div id="result"></div>
+      </div>
     </div>
-    <div class="scroll-progress"></div>
-		<footer>
-			<p>Developed by mruminski</p>
-    </footer>
-    <script type="text/javascript" src="vendor/flickity.pkgd.min.js"></script>
-    <script type="text/javascript" src="vendor/hash.js"></script>
-    <script type="text/javascript" src="vendor/mustache.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-	</body>
+    <div class="carousel-cell" id="carousel-cell2">
+      <div class="container">
+      </div>
+    </div>
+    <div class="carousel-cell" id="carousel-cell3">
+      <div class="container">
+      </div>
+    </div>
+    <div class="carousel-cell" id="carousel-cell4">
+      <div class="container">
+      </div>
+    </div>
+    <div class="carousel-cell" id="carousel-cell5">
+      <div class="container">
+      </div>
+    </div>
+    <div class="carousel-cell" id="carousel-cell6">
+      <div class="container">
+      </div>
+    </div>
+    <div class="carousel-cell" id="carousel-cell7">
+      <div class="container">
+      </div>
+    </div>
+  </div>
+  <div class="scroll-progress"></div>
+  <footer>
+    <p>Developed by mruminski</p>
+  </footer>
+  <script type="text/javascript" src="vendor/flickity.pkgd.min.js"></script>
+  <script type="text/javascript" src="vendor/hash.js"></script>
+  <script type="text/javascript" src="vendor/mustache.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
 </html>
