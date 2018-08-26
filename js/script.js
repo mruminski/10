@@ -28,3 +28,16 @@ flkty.on('scroll', function(progress) {
   progress = Math.max(0, Math.min(1, progress));
   progressBar.style.width = progress * 100 + '%';
 })
+
+window.initMap = function() {
+  var petra = data[0].coords;
+  var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 4, center: petra});
+  
+  var marker = '';
+  (function() {
+    for (var i = 0; i < dataLen; i++) {
+      marker = new google.maps.Marker({position: data[i].coords, map});
+    }
+  })();
+}
