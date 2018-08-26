@@ -1,17 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-		<title> </title>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-	</head>
-	<body>
-		<section>
-			
-		</section>
-		<footer>
-			
-    </footer>
-    <script type="text/javascript" src="js/script.js"></script>
-	</body>
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New 7 Wonders of the World</title>
+  <link rel="stylesheet" type="text/css" href="vendor/normalize.css">
+  <link rel="stylesheet" type="text/css" href="vendor/flickity.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<script id="template" type="x-tmpl-mustache">
+  <div class="carousel-cell">
+    <div class="container">
+      <h3> {{ title }}</h3>
+      <ul>
+        {{{ description }}}
+      </ul>
+    </div>
+  </div>
+  </script>
+<script>
+  var data = [
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/The_Monastery%2C_Petra%2C_Jordan8.jpg/800px-The_Monastery%2C_Petra%2C_Jordan8.jpg">',
+      title: 'Petra',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/The_Monastery%2C_Petra%2C_Jordan8.jpg/800px-The_Monastery%2C_Petra%2C_Jordan8.jpg">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/The_Great_Wall_of_China_at_Jinshanling.jpg/800px-The_Great_Wall_of_China_at_Jinshanling.jpg">',
+      title: 'Great Wall of China',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/The_Great_Wall_of_China_at_Jinshanling.jpg/800px-The_Great_Wall_of_China_at_Jinshanling.jpg">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/KOLOSSEUM_-_panoramio.jpg">',
+      title: 'The Colosseum',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/KOLOSSEUM_-_panoramio.jpg">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Chichen-Itza-Castillo-Seen-From-East.JPG/800px-Chichen-Itza-Castillo-Seen-From-East.JPG">',
+      title: 'Chichen Itza',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Chichen-Itza-Castillo-Seen-From-East.JPG/800px-Chichen-Itza-Castillo-Seen-From-East.JPG">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Machu_Picchu%2C_Peru.jpg/800px-Machu_Picchu%2C_Peru.jpg">',
+      title: 'Machu Picchu',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Machu_Picchu%2C_Peru.jpg/800px-Machu_Picchu%2C_Peru.jpg">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Taj_Mahal_in_March_2004.jpg/728px-Taj_Mahal_in_March_2004.jpg">',
+      title: 'Taj Mahal',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Taj_Mahal_in_March_2004.jpg/728px-Taj_Mahal_in_March_2004.jpg">'
+    },
+    {
+      image: '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/1_cristor_redentor_2014.jpg/640px-1_cristor_redentor_2014.jpg">',
+      title: 'Christ of Redeemer',
+      description: '<h3></h3> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/1_cristor_redentor_2014.jpg/640px-1_cristor_redentor_2014.jpg">'
+    }
+  ]
+</script>
+<body>
+  <button id="reset-btn" data-selector="#carousel-cell1">Reset</button>
+  <div id="carousel" class="main-carousel">
+    
+  </div>
+  <div class="scroll-progress"></div>
+  <footer>
+    <p>Developed by mruminski</p>
+  </footer>
+  <script type="text/javascript" src="vendor/flickity.pkgd.min.js"></script>
+  <script type="text/javascript" src="vendor/hash.js"></script>
+  <script type="text/javascript" src="vendor/mustache.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
 </html>
