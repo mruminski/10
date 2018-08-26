@@ -1,4 +1,6 @@
 var template = document.getElementById('template').innerHTML;
+var result = document.querySelector('#carousel');
+
 var wondersList = '';
 var dataLen = data.length;
 
@@ -6,7 +8,7 @@ for (var i = 0; i < dataLen; i++) {
   wondersList += Mustache.render(template, data[i]);
 }
 
-result.insertAdjacentHTML('beforeEnd', wondersList);
+result.innerHTML = wondersList;
 
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity(elem, {
