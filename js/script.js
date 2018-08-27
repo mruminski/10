@@ -32,14 +32,18 @@ window.initMap = function() {
   var petra = data[0].coords;
   var map = new google.maps.Map(
     document.getElementById('map'), {zoom: 4, center: petra});
-  
   var marker = '';
+
   (function() {
     for (var i = 0; i < dataLen; i++) {
-      marker = new google.maps.Marker({position: data[i].coords, map});
-      // marker.addListener('click',function() {
-      //   flkty.select();
-      // });
+      marker = new google.maps.Marker({position: data[i].coords, map})
+    
+      var goToSlide = function(i) {
+        marker.addListener('click',function() {
+          flkty.select(i);
+        });
+      };
+      goToSlide(i);
     }
 
     flkty.on('change', function(index) {
