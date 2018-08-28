@@ -18,9 +18,8 @@ var flkty = new Flickity(elem, {
 });
 
 var reset = document.querySelector('#reset-btn');
-reset.addEventListener('click', function(event) {
-  var select = event.target.getAttribute('data-selector');
-  flkty.selectCell(select);
+reset.addEventListener('click', function() {
+  flkty.select(0);
 })
 
 var progressBar = document.querySelector('.scroll-progress');
@@ -34,10 +33,23 @@ window.initMap = function() {
   var map = new google.maps.Map(
     document.getElementById('map'), {zoom: 4, center: petra});
   
-  var marker = '';
+
   (function() {
     for (var i = 0; i < dataLen; i++) {
-      marker = new google.maps.Marker({position: data[i].coords, map});
+      marker = new google.maps.Marker({position: data[i].coords, map})
+      var marker = '';
+      var goToSlide = function(i) {
+        marker.addListener('click',function() {
+          flkty.select(i);
+        });
+      };
+      goToSlide(i);
     }
+
+    flkty.on('change', function(index) {
+      map.panTo(data[index].coords);
+      map.setZoom(12);
+    })
+
   })();
 }

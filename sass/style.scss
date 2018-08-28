@@ -4,6 +4,15 @@ body {
   margin: 25px auto;
 }
 
+#reset-btn {
+  margin-left: 35px;
+  padding: 5px;
+  border: none;
+  background: orangered;
+  color: white;
+  font-size: 1.2rem;
+}
+
 .carousel-cell {
   width: 100%;
   height: 50vh;
@@ -31,16 +40,17 @@ body {
 
 @media screen and (min-width: 501px) and (max-width: 768px) {
   .container { 
-    max-width: 60%;
-    h3 { font-size: 1.4rem; }
+    max-width: 100%;
+    h3 { font-size: 1.2rem; }
     img { width: 480px; }
   }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1199px) {
   .container { 
-    max-width: 75%;
+    max-width: 90%;
     h3 { font-size: 1.6rem; }
+    img { width: 600px; }
   }
 }
 
@@ -63,6 +73,7 @@ body {
 }
 
 .scroll-progress {
+  margin: 15px 0;
   height: 25px;
   width: 0px;
   background: orangered;
@@ -74,7 +85,6 @@ body {
   max-width: 1200px;
   height: 50vh;
 }
-
 
 footer {
   p {
