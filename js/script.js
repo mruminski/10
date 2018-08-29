@@ -36,8 +36,8 @@ window.initMap = function() {
 
   (function() {
     for (var i = 0; i < dataLen; i++) {
-      marker = new google.maps.Marker({position: data[i].coords, map})
       var marker = '';
+      marker = new google.maps.Marker({position: data[i].coords, map})
       var goToSlide = function(i) {
         marker.addListener('click',function() {
           flkty.select(i);
